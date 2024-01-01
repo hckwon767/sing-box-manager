@@ -1336,8 +1336,10 @@ function select_unlocked_items() {
 2). Netflix
 3). Disney+
 4). YouTube
-Select [1-4]: " choices
-        if [[ "$choices" =~ ^[1234]+$ ]]; then
+5). Google
+6). Spotify
+Select [1-6]: " choices
+        if [[ "$choices" =~ ^[123456]+$ ]]; then
             selected=($(echo "$choices" | sed 's/./& /g'))
             break
         else
@@ -1361,6 +1363,12 @@ function update_geosite_array() {
         4)
             geosite+=("\"youtube\"")
             ;;
+        5)
+            geosite+=("\"google\"")
+            ;;
+        6)
+            geosite+=("\"spotify\"")
+            ;;                        
         *)
             echo -e "${RED}Invalid choice: $choice${NC}"
             ;;
