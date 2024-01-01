@@ -79,7 +79,7 @@ wget -N -O /root/singbox.sh https://raw.githubusercontent.com/TheyCallMeSecond/s
 - **HTTP**
 - **TUIC V5**
 - **Juicity**
-- **WireGuard--Unlock ChatGPT, Netflix, Disney+**
+- **WireGuard--Unlock ChatGPT, Netflix, Disney+, Google, Spotify**
 - **Hysteria2**
 - **VLESS+TCP**
 - **VLESS+WebSocket**
