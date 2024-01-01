@@ -1,79 +1,79 @@
-# **更新内容**
+# **Updated content**
 - **V 1.2**
-- **客户端配置文件添加Clash API支持。**
-- **其它优化与修复。**
+- **Client profile added Clash API support.**
+- **Other optimizations and fixes.**
 
 <details>
-   <summary><b>历史更新内容</b></summary>
+   <summary><b>Historical update content</b></summary>
 
 - **V 1.1**
-- **修改客户端配置文件DNS配置部分。**
+- **Modify the DNS configuration section of the client configuration file.**
 
 <br>
 
 - **V 1.1-beta.3**
-- **添加 HTTPUpgrade 传输层。**
+- **Add HTTPUpgrade transport layer.**
 
 <br>
 
 - **V 1.1-beta.2**
-- **修复自动更新证书问题。**
-- **修复Cron检测规则。**
+- **Fix the automatic update certificate issue.**
+- **Fix Cron detection rules.**
 
 <br>
 
 - **V 1.1-beta.1** 
-- **添加 Multiplex (多路复用)、TCP Brutal (拥塞控制算法)、ECH (TLS 扩展)配置；若要启用 Multiplex、TCP Brutal，请使用1.7.0以上的 sing-box 内核，请在服务端自行安装 TCP Brutal。**
-- **添加对 Juicity 节点链接生成的支持。**
-- **添加对 HTTP 协议的支持。**
-- **其它优化与修复。**
+- **Add Multiplex (multiplexing), TCP Brutal (congestion control algorithm), ECH (TLS extension) configuration; to enable Multiplex and TCP Brutal, please use the sing-box kernel above 1.7.0, please Install TCP Brutal on your own.**
+- **Add support for Juicity node link generation.**
+- **Add support for HTTP protocol.**
+- **Other optimizations and fixes.**
 
 <br>
 
 - **V 1.0** 
-- **添加 WireGuard 解锁 YouTube 选项。**
-- **添加节点管理选项，支持删除任意节点的配置，包括服务端与客户端配置文件。**
-- **删除节点配置仅支持Version：1.0及之后的版本。**
-- **其它优化与修复。**  
+- **Add WireGuard unblock YouTube option.**
+- **Add node management options to support deleting the configuration of any node, including server and client configuration files.**
+- **Deleting node configuration only supports Version: 1.0 and later.**
+- **Other optimizations and fixes.** 
 </details>
 
-# **说明**
-- **脚本使用sing-box、Juicity内核。**
-- **脚本支持 CentOS 8+、Debian 10+、Ubuntu 20+ 操作系统。**
-- **脚本所有协议均支持自签证书（NaiveProxy除外）。**
-- **脚本支持多用户。**
-- **脚本支持所有协议共存。**
-- **脚本支持自签100年证书。**
-- **脚本支持自动续签证书。**
-- **脚本支持HTTP、WebSocket、gRPC、HTTPUpgrade传输协议。**
-- **脚本支持 Multiplex、TCP Brutal、ECH 配置；若要启用 Multiplex、TCP Brutal，sing-box 内核需 ≥1.7.0，请在服务端自行安装 TCP Brutal。**
-- **由于 Clash 不支持 TCP Brutal、ECH 配置，如果启用这些配置将不会自动生成 Clash 配置文件。**
+# **Notes**
+- **The script uses sing-box and Juicity kernel.**
+- **Script supports CentOS 8+, Debian 10+, Ubuntu 20+ operating systems.**
+- **All protocols of the script support self-signed certificates (except NaiveProxy).**
+- **Script supports multiple users.**
+- **Script supports coexistence of all protocols.**
+- **Script supports self-signed 100-year certificates.**
+- **Script supports automatic renewal of certificates.**
+- **The script supports HTTP, WebSocket, gRPC, HTTPUpgrade transport protocols.**
+- **The script supports Multiplex, TCP Brutal, and ECH configuration; to enable Multiplex and TCP Brutal, the sing-box kernel needs to be ≥1.7.0, and please install TCP Brutal on the server.**
+- **Since Clash does not support TCP Brutal and ECH configurations, the Clash configuration file will not be automatically generated if these configurations are enabled.**
 
-# **安装**
-- **Debian&&Ubuntu使用以下命令安装依赖**
+# **Install**
+- **Debian&&Ubuntu use the following command to install dependencies**
 ```
 apt update && apt -y install curl wget tar socat jq git openssl uuid-runtime build-essential zlib1g-dev libssl-dev libevent-dev dnsutils cron
 ```
-- **CentOS使用以下命令安装依赖**
+- **CentOS uses the following command to install dependencies**
 ```
 yum update && yum -y install curl wget tar socat jq git openssl util-linux gcc-c++ zlib-devel openssl-devel libevent-devel bind-utils cronie
 ```
-- **使用以下命令运行脚本**
+- **Run the script using the following command**
 ```
-wget -N -O /root/singbox.sh https://raw.githubusercontent.com/TinrLin/sing-box/main/Install.sh && chmod +x /root/singbox.sh && ln -sf /root/singbox.sh /usr/local/bin/singbox && bash /root/singbox.sh
+wget -N -O /root/singbox.sh https://raw.githubusercontent.com/TheyCallMeSecond/sing-box-manager/main/Install.sh && chmod +x /root/singbox.sh && ln -sf /root/singbox.sh /usr/local/bin/singbox && bash /root/singbox.sh
 ```
 
-# **使用方法**
-- **Clash客户端配置文件位于/usr/local/etc/sing-box/clash.yaml，下载后加载到 Clash 客户端即可使用，需要配合 Meta 内核。**
-- **sing-box电脑端配置文件位于/usr/local/etc/sing-box/win_client.json，下载后加载到 V2rayN、SFM 客户端即可使用。**
-- **sing-box手机端配置文件位于/usr/local/etc/sing-box/phone_client.json，下载后加载到 SFA、SFI 客户端即可使用。**
+# **Instructions**
+- **The Clash client configuration file is located in /usr/local/etc/sing-box/clash.yaml. After downloading, it can be used by loading it into the Clash client. It needs to cooperate with the Meta kernel.**
+- **sing-box computer configuration file is located in /usr/local/etc/sing-box/win_client.json. After downloading, it can be loaded into V2rayN and SFM clients for use.**
+- **sing-box mobile phone configuration file is located in /usr/local/etc/sing-box/phone_client.json. After downloading, it can be loaded into SFA and SFI clients for use.**
 
-# **脚本支持的节点类型**
+# **Node types supported by script**
 - **SOCKS**
 - **HTTP**
 - **TUIC V5**
 - **Juicity**
-- **WireGuard--解锁 ChatGPT、Netflix、Disney+**
+- **WireGuard--Unlock ChatGPT, Netflix, Disney+**
 - **Hysteria2**
 - **VLESS+TCP**
 - **VLESS+WebSocket**
@@ -82,7 +82,7 @@ wget -N -O /root/singbox.sh https://raw.githubusercontent.com/TinrLin/sing-box/m
 - **VLESS+Vision+REALITY**
 - **VLESS+H2C+REALITY**
 - **VLESS+gRPC+REALITY**
-- **Direct--sing-box版任意门**
+- **Direct--sing-box**
 - **Trojan+TCP**
 - **Trojan+WebSocket**
 - **Trojan+gRPC**
@@ -104,4 +104,4 @@ wget -N -O /root/singbox.sh https://raw.githubusercontent.com/TinrLin/sing-box/m
 - **VMess+WebSocket+TLS** 
 - **VMess+H2C+TLS**
 - **VMess+gRPC+TLS** 
-- **VMess+HTTPUpgrade+TLS** 
+- **VMess+HTTPUpgrade+TLS**
