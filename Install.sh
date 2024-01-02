@@ -2443,7 +2443,7 @@ function update_route_file() {
         echo "${geosite[*]}"
     )
     local geosite_formatted=$(sed 's/,/,\\n          /g' <<<"$geosite_list")
-    echo "正在配置 WireGuard..."
+    echo "Configuring WireGuard..."
     sed -i '/"rules": \[/!b;a\
       {\
         "geosite": [\
