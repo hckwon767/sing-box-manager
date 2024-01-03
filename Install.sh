@@ -2474,7 +2474,7 @@ function update_outbound_file() {
         }
     ' "$config_file" >"$config_file.tmp"
     mv "$config_file.tmp" "$config_file"
-    echo "WireGuard 配置完成。"
+    echo "WireGuard configuration is complete."
 }
 
 function write_phone_client_file() {
