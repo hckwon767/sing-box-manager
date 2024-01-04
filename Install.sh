@@ -4106,16 +4106,16 @@ function display_Hy2_config_files() {
         if [ "$enable_ech" = true ]; then
             write_phone_client_file
             write_win_client_file
-            generate_Hy2_win_client_config "$user_password"
-            generate_Hy2_phone_client_config "$user_password"
+            generate_Hysteria2_win_client_config "$user_password"
+            generate_Hysteria2_phone_client_config "$user_password"
         else
             write_phone_client_file
             write_win_client_file
-            generate_Hy2_win_client_config "$user_password"
-            generate_Hy2_phone_client_config "$user_password"
+            generate_Hysteria2_win_client_config "$user_password"
+            generate_Hysteria2_phone_client_config "$user_password"
             ensure_clash_yaml
             write_clash_yaml
-            generate_Hy2_yaml
+            generate_Hysteria2_yaml
         fi
     done
     if [ "$enable_ech" = true ]; then
