@@ -340,7 +340,6 @@ function select_sing_box_install_option() {
         echo "2). Download and install sing-box (Beta version)"
         echo "3). Compile and install sing-box (full featured version)"
         read -p "Please select [1-3]: " install_option
-        install_option="${install_option:-1}"
         case $install_option in
         1)
             install_latest_sing_box
