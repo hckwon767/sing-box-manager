@@ -868,7 +868,7 @@ function set_target_server() {
 function get_local_ip() {
     local local_ip_v4
     local local_ip_v6
-    local_ip_v4=$(curl -s4 https://api.myip.com | grep -o '"ip":"[^"]*' | awk -F ':"' '{print $2}')
+    local_ip_v4=$(wget -qO- --no-check-certificate --user-agent=Mozilla --tries=2 --timeout=1 https://v4.ident.me)
     if [[ -n "$local_ip_v4" ]]; then
         ip_v4="$local_ip_v4"
     else
@@ -877,7 +877,7 @@ function get_local_ip() {
             ip_v4="$local_ip_v4"
         fi
     fi
-    local_ip_v6=$(curl -s6 https://api.myip.com | grep -o '"ip":"[^"]*' | awk -F ':"' '{print $2}')
+    local_ip_v6=$(wget -qO- --no-check-certificate --user-agent=Mozilla --tries=2 --timeout=1 https://v6.ident.me)
     if [[ -n "$local_ip_v6" ]]; then
         ip_v6="$local_ip_v6"
     else
