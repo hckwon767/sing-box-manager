@@ -869,23 +869,11 @@ function get_local_ip() {
     local local_ip_v4
     local local_ip_v6
     local_ip_v4=$(wget -qO- --no-check-certificate --user-agent=Mozilla --tries=2 --timeout=1 https://v4.ident.me)
-    if [[ -n "$local_ip_v4" ]]; then
         ip_v4="$local_ip_v4"
-    else
-        local_ip_v4=$(curl -s4 icanhazip.com)
-        if [[ -n "$local_ip_v4" ]]; then
-            ip_v4="$local_ip_v4"
-        fi
-    fi
+
     local_ip_v6=$(wget -qO- --no-check-certificate --user-agent=Mozilla --tries=2 --timeout=1 https://v6.ident.me)
-    if [[ -n "$local_ip_v6" ]]; then
         ip_v6="$local_ip_v6"
-    else
-        local_ip_v6=$(curl -s6 icanhazip.com)
-        if [[ -n "$local_ip_v6" ]]; then
-            ip_v6="$local_ip_v6"
-        fi
-    fi
+
     if [[ -z "$ip_v4" && -z "$ip_v6" ]]; then
         echo -e "${RED}Unable to retrieve local IP address!${NC}"
     fi
