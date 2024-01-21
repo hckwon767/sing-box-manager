@@ -289,6 +289,7 @@ function install_sing_box() {
         return 1
     else
         get_local_ip
+        configure_dns64        
         select_sing_box_install_option
         configure_sing_box_service
         create_sing_box_folders
