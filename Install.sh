@@ -290,7 +290,7 @@ function install_sing_box() {
     else
         get_local_ip
         configure_dns64
-        select_sing_box_install_option
+        install_latest_sing_box
         configure_sing_box_service
         create_sing_box_folders
     fi
