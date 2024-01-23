@@ -5,12 +5,18 @@
 </div>
 
 # **Updated content**
+- **V 1.3**
+- **Support sing-box 1.8+ rule-set**
+- **Support sing-box 1.8+ cache file**
+
+<details>
+   <summary><b>Historical update content</b></summary>
+
 - **V 1.2**
 - **Client profile added Clash API support.**
 - **Other optimizations and fixes.**
 
-<details>
-   <summary><b>Historical update content</b></summary>
+<br>
 
 - **V 1.1**
 - **Modify the DNS configuration section of the client configuration file.**
