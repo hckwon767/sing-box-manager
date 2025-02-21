@@ -4626,8 +4626,8 @@ function check_wireguard_config() {
 }
 
 function Update_Script() {
-    wget -O /root/singbox.sh https://ghproxy.net/https://raw.githubusercontent.com/hckwon767/sing-box-manager/refs/heads/main/Install.sh
-    chmod +x /root/singbox.sh
+    wget -O /usr/local/bin/singbox.sh https://ghproxy.net/https://raw.githubusercontent.com/hckwon767/sing-box-manager/refs/heads/main/Install.sh
+    chmod +x /usr/local/bin/singbox.sh
 }
 
 function add_cron_job() {
